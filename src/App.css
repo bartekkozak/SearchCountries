@@ -52,6 +52,7 @@ input[type="text"]::placeholder {
   display: flex;
   flex-wrap: wrap;
   max-width: 1600px;
+  width: 100%;
   text-align: left;
   margin: 50px 30px;
   border: 3px solid white;
