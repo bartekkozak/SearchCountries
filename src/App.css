@@ -8,7 +8,7 @@
   text-align: center;
   background-image: url("./images/world.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100%;
   background-color: #1b1d44;
   min-height: 100vh;
   display: flex;
@@ -48,6 +48,14 @@ input[type="text"]::placeholder {
   padding-left: 10px;
 }
 
+.country__image {
+  transition: 0.3s;
+}
+
+.country__image:hover {
+  transform: scale(1.1);
+}
+
 .country-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -69,6 +77,9 @@ input[type="text"]::placeholder {
   .country {
     width: 25%;
   }
+  .country-wrapper {
+    width: 96%;
+  }
 }
 
 @media (max-width: 900px) {
@@ -86,5 +97,8 @@ input[type="text"]::placeholder {
 @media (max-width: 460px) {
   .country {
     width: 100%;
+  }
+  .country-wrapper {
+    width: 90%;
   }
 }
