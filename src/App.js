@@ -33,28 +33,34 @@ class App extends Component {
       .filter(this.searchFor(inputText))
       .map((country, key) => {
         return (
-          <div key={key}>
+          <div key={key} className="country">
             <a href={`https://en.wikipedia.org/wiki/${country.name}`}>
               <img
                 src={`https://www.countryflags.io/${country.code}/shiny/64.png`}
+                className="country__image"
               />
             </a>
-            {country.name}
+            <span className="country__name">{country.name}</span>
           </div>
         );
       });
 
     return (
       <div className="App">
-        <h2>MIasta</h2>
         <input
           type="text"
-          placeholder="wpisz cos"
+          placeholder="search"
           onChange={this.onChange}
           name="inputText"
         />
         {console.log(Countries)}
-        {filteredCountries}
+        <div className="country-wrapper">
+          {filteredCountries.length > 0 ? (
+            filteredCountries
+          ) : (
+            <p className="error-message">There is no such country</p>
+          )}
+        </div>
       </div>
     );
   }
